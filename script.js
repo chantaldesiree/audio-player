@@ -8,8 +8,11 @@ const progress = document.querySelector('.progress')
 const songTitle = document.querySelector('#title')
 const artistName = document.querySelector('#artist')
 const coverArt = document.querySelector('#cover-art')
+const coverArtContainer = document.querySelector('.cover-art-container')
 const toggle = document.querySelector('#toggle')
 const copyright = document.querySelector('#copyright')
+const dmToggle = document.querySelector('#dm-toggle')
+const body = document.querySelector('body')
 
 const songs = {'Snow Dancer' : 'Roa', 'When Winter Rises' : 'Vendredi', 'Your Little Wings' : 'Tokyo Music Walker'}
 
@@ -58,6 +61,8 @@ function playSong() {
   audioContainer.classList.add('play')
   playBtn.querySelector('i.fas').classList.remove('fa-play')
   playBtn.querySelector('i.fas').classList.add('fa-pause')
+  coverArtContainer.classList.add('shift-cover-art')
+  coverArtContainer.classList.remove('shift-down')
   audio.play()
 }
 
@@ -65,6 +70,8 @@ function pauseSong() {
   audioContainer.classList.remove('play')
   playBtn.querySelector('i.fas').classList.add('fa-play')
   playBtn.querySelector('i.fas').classList.remove('fa-pause')
+  coverArtContainer.classList.add('shift-down')
+  coverArtContainer.classList.remove('shift-cover-art')
   audio.pause()
 }
 
@@ -116,6 +123,19 @@ function setProgress(e) {
   audio.currentTime = (clickX / width) * duration
 }
 
+function toggleDarkmode() {
+  var isDark = body.classList.contains('darkMode')
+
+  if (isDark) {
+    body.classList.remove('darkMode')
+    body.classList.add('lightMode')
+  }
+  else {
+    body.classList.add('darkMode')
+    body.classList.remove('lightMode')
+  }
+}
+
 playBtn.addEventListener('click', () => {
   const isPlaying = audioContainer.classList.contains('play')
 
@@ -149,3 +169,5 @@ audio.addEventListener('timeupdate', updateProgress)
 audio.addEventListener('ended', nextSong)
 
 progressContainer.addEventListener('click', setProgress)
+
+dmToggle.addEventListener('click', toggleDarkmode)

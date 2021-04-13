@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>Audio Player</title>
 </head>
-<body>
+<body class="lightMode">
+
+  <div class="cover-art-container">
+    <img src="" alt="cover-art" id="cover-art" />
+  </div>
 
   <div class="audio-container">
     <div class="audio-info">
@@ -27,11 +31,6 @@
     </div>
 
     <audio src="" id="audio"></audio>
-
-    <div class="cover-art-container">
-      <img src="" alt="cover-art" id="cover-art" />
-    </div>
-
     <div class="navigation">
       <button id="previous" class="action-btn">
         <i class="fas fa-step-backward"></i>
@@ -44,6 +43,9 @@
       </button>
       <div id="copyright-toggle">
         <i class="fas fa-chevron-circle-left" id="toggle"></i>
+      </div>
+      <div id="darkMode-toggle">
+        <i class="fas fa-adjust" id="dm-toggle"></i>
       </div>
     </div>
   </div>
