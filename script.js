@@ -27,7 +27,7 @@ const songInfo = [
   "Music promoted by Audio Library - <a href='https://youtu.be/od41oz5Gf6g'/>https://youtu.be/od41oz5Gf6g</>"]
 ]
 
-let songIndex = 2
+let songIndex = 1
 
 loadSong(songs[songIndex])
 
