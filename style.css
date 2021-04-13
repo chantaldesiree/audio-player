@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(0deg, rgb(226, 248, 255) 40%, rgb(67, 186, 255) 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-container {
+  background-color:white;
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  padding: 15px 25px;
+  position: relative;
+  margin: 100px 0px;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.4)
+}
+
+.cover-art-container {
+  position: relative;
+  width: 125px;
+  padding-right: 10px;
+}
+
+.cover-art-container img {
+  width: inherit;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
+}
+
+.audio-container.play .cover-art-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-btn {
+  background-color: white;
+  border: 0;
+  color: rgb(152, 217, 255);
+  font-size: 25px;
+  padding: 0 20px;
+  z-index: 20;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.action-btn-main {
+  color: rgb(39, 176, 255);
+  font-size: 40px;
+  margin: 10px 20px;
+  z-index: 20;
+}
+
+.audio-info {
+  background-color: rgba(255,255,255,.4);
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 210px);
+  opacity: 0;
+  transform: translateY(0%);
+  padding: 10px 20px 10px 150px;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+.audio-container.play .audio-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.audio-info h4, .copyright-container .copyright div {
+  color: rgb(39, 176, 255);
+}
+
+.audio-info h4 {
+  margin: 0;
+}
+
+#copyright {
+  font-size: .5em;
+  padding: 2px 0px;
+}
+
+.copyright-container {
+  background-color: rgba(255,255,255,.4);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: calc(100% - 50px);
+  opacity: 0;
+  transform: translateY(0%);
+  padding: 5px;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+#copyright-toggle {
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+  color: rgb(39, 176, 255);
+  padding: 5px;
+}
+
+#copyright-toggle i {
+  align-content: center;
+}
+
+.audio-container.play .copyright-toggle {
+  opacity: 1;
+}
+
+.audio-container.toggle-show .copyright-container {
+  opacity: 1;
+  transform: translateY(100%);
+}
+
+.copyright {
+  margin: 10px;
+}
+
+.copyright:last-child div {
+  margin-bottom: 5px;
+}
+
+.progress-container {
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 0 2px 0;
+  height: 3px;
+  width: 100%;
+}
+
+.progress {
+  background-color: rgb(39, 176, 255);
+  border-radius: 3px;
+  height: 100%;
+  width: 0%;
+}

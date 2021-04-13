@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Audio Player</title>
+</head>
+<body>
+
+  <div class="audio-container">
+    <div class="audio-info">
+      <h4 id="title">Song</h4>
+
+      <div class="progress-container">
+        <div class="progress">
+
+        </div>
+      </div>
+    </div>
+    <div class="copyright-container">
+      <div class="copyright" id="copyright">
+
+      </div>
+    </div>
+
+    <audio src="songs/When Winter Rises.mp3" id="audio"></audio>
+
+    <div class="cover-art-container">
+      <img src="cover-art/When Winter Rises.jpg" alt="cover-art" id="cover-art" />
+    </div>
+
+    <div class="navigation">
+      <button id="previous" class="action-btn">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="action-btn action-btn-main">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="action-btn">
+        <i class="fas fa-forward"></i>
+      </button>
+      <div id="copyright-toggle">
+        <i class="fas fa-chevron-circle-left" id="toggle"></i>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
