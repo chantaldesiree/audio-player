@@ -6,11 +6,12 @@ const audio = document.querySelector('#audio')
 const progressContainer = document.querySelector('.progress-container')
 const progress = document.querySelector('.progress')
 const songTitle = document.querySelector('#title')
+const artistName = document.querySelector('#artist')
 const coverArt = document.querySelector('#cover-art')
 const toggle = document.querySelector('#toggle')
 const copyright = document.querySelector('#copyright')
 
-const songs = ['Snow Dancer', 'When Winter Rises', 'Your Little Wings']
+const songs = {'Snow Dancer' : 'Roa', 'When Winter Rises' : 'Vendredi', 'Your Little Wings' : 'Tokyo Music Walker'}
 
 const songInfo = [
   ["<strong>Snow Dancer</strong> by Roa: <a href='https://soundcloud.com/roa_music1031​'>https://soundcloud.com/roa_music1031​</a>",
@@ -28,8 +29,10 @@ const songInfo = [
 ]
 
 let songIndex = 1
+var songsArray = Object.keys(songs);
+var artistsArray = Object.values(songs);
 
-loadSong(songs[songIndex])
+loadSong(songsArray[songIndex], artistsArray[songIndex])
 
 function loadSongInfo() {
   songInfo[songIndex].map( item => {
@@ -43,9 +46,10 @@ function clearSongInfo() {
   copyright.innerHTML = ""
 }
 
-function loadSong(song) {
+function loadSong(song, artist) {
   loadSongInfo()
   songTitle.innerHTML = song
+  artistName.innerHTML = artist
   audio.src = `songs/${song}.mp3`
   coverArt.src = `cover-art/${song}.jpg`
 }
@@ -69,10 +73,10 @@ function prevSong() {
   songIndex--;
 
   if(songIndex < 0) {
-    songIndex = songs.length - 1
+    songIndex = songsArray.length - 1
   }
 
-  loadSong(songs[songIndex])
+  loadSong(songsArray[songIndex], artistsArray[songIndex])
 
   const isPlaying = audioContainer.classList.contains('play')
 
@@ -85,11 +89,11 @@ function nextSong() {
   clearSongInfo()
   songIndex++;
 
-  if(songIndex > songs.length - 1) {
+  if(songIndex > songsArray.length - 1) {
     songIndex = 0
   }
 
-  loadSong(songs[songIndex])
+  loadSong(songsArray[songIndex], artistsArray[songIndex])
 
   const isPlaying = audioContainer.classList.contains('play')
 
