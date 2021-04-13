@@ -110,8 +110,13 @@ body {
   transform: translateY(-100%);
 }
 
-.audio-info h4, .audio-info h6, .copyright-container .copyright div {
+.audio-info h4, .copyright-container .copyright div {
   color: rgb(39, 176, 255);
+  margin: 0px;
+}
+
+.audio-info h6 {
+  color:rgb(101, 198, 255);
   margin: 0px;
 }
 
@@ -189,20 +194,24 @@ body {
 }
 
 .darkMode  {
-  background-image: linear-gradient(0deg, rgb(54, 54, 54) 30%, rgb(17, 17, 17) 90%);
+  background-image: linear-gradient(0deg, rgb(54, 54, 54) 30%, rgb(12, 12, 12) 90%);
 }
 
 .darkMode a, .darkMode .audio-info h6 {
   color:rgb(126, 126, 126);
 }
 
-.darkMode .audio-info h4, .darkMode #darkMode-toggle, .darkMode .copyright-container .copyright div {
+.darkMode .audio-info h4, .darkMode #darkMode-toggle {
   color:rgb(255, 39, 122);
   margin: 0px;
 }
 
 .darkMode .progress {
   background-color: rgb(255, 39, 122);
+}
+
+.darkMode .progress-container {
+  background-color: rgb(12, 12, 12);
 }
 
 .darkMode .audio-info {
@@ -231,6 +240,11 @@ body {
 
 .darkMode .copyright-container {
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.darkMode .copyright div {
+  color: rgb(255, 39, 122);
+  margin-bottom: 5px;
 }
 
 .lightMode {
