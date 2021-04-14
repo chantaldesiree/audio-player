@@ -23,7 +23,7 @@ body {
 .cover-art-container {
   position: relative;
   width: 225px;
-  margin: -70px;
+  margin: 225px 0 -80px 0;
 }
 
 .cover-art-container img {
@@ -35,7 +35,7 @@ body {
   bottom: 0;
   left: 0;
   box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
-  animation: rotate 3s linear infinite;
+  animation: rotate 20s linear infinite;
   animation-play-state: paused;
 }
 
@@ -49,7 +49,7 @@ body {
   transition: transform 0.4s ease-in, opacity 0.4s ease-in;
 }
 
-.audio-container.play .cover-art-container img {
+.cover-art-container.play img {
   animation-play-state: running;
 }
 
@@ -160,8 +160,8 @@ body {
   cursor: pointer;
 }
 
-.audio-container.play .copyright-toggle {
-  opacity: 1;
+.copyright-container {
+  animation-play-state: running;
 }
 
 .audio-container.toggle-show .copyright-container {
@@ -194,7 +194,7 @@ body {
 }
 
 .darkMode  {
-  background-image: linear-gradient(0deg, rgb(54, 54, 54) 30%, rgb(12, 12, 12) 90%);
+  background-image: linear-gradient(0deg, rgb(12,12,12) 5%, rgb(69,69,69) 95%);
 }
 
 .darkMode a, .darkMode .audio-info h6 {
@@ -219,7 +219,7 @@ body {
 }
 
 .darkMode .audio-container {
-  background-color:rgb(65, 65, 65);
+  background-color:rgb(69,69,69);
   border-radius: 10px 10px 10px 10px;
   display: flex;
   padding: 0 80px;
@@ -229,7 +229,7 @@ body {
 }
 
 .darkMode .action-btn {
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(69,69,69);
   border: 0;
   color: rgb(255, 39, 122);
 }
